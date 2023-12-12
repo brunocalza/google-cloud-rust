@@ -105,8 +105,8 @@ pub struct Object {
     /// \[<https://tools.ietf.org/html/rfc7232#section-2.3\][RFC> 7232 §2.3].
     /// Attempting to set or update this field will result in a
     /// \[FieldViolation][google.rpc.BadRequest.FieldViolation\].
-    #[serde(skip_serializing_if = "String::is_empty")]
-    pub etag: String,
+    #[serde(skip_serializing_if = "Option::is_none")]
+    pub etag: Option<String>,
     /// The modification time of the object metadata.
     /// Attempting to set or update this field will result in a
     /// \[FieldViolation][google.rpc.BadRequest.FieldViolation\].
